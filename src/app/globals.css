@@ -9,7 +9,14 @@
   --foil-gold: #B89B5E;
 }
 
+/* Old-site body: clean, minimal, no decorative noise */
 body {
   background-color: var(--paper);
   color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Links in body text */
+a {
+  color: inherit;
 }
