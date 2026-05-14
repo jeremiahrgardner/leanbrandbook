@@ -30,7 +30,10 @@ export default function SiteFooter() {
         </div>
         <div className="pt-8 border-t border-[#D8D3CC]">
           <p className="font-sans text-[9px] text-[#8a8580]">
-            © 2013-2024 Jeremiah Gardner | All rights reserved. The Lean Brand™ is a registered Trademark of Jeremiah Gardner.
+            &copy; 2013-2025 Jeremiah Gardner | All rights reserved. The Lean Brand&trade; is a registered Trademark of Jeremiah Gardner. The Lean Brand&trade; cover artwork subject to change.
+          </p>
+          <p className="font-sans text-[9px] text-[#8a8580] mt-2">
+            Site by <a href="https://www.zesty.io" target="_blank" rel="noopener noreferrer" className="hover:text-[#B89B5E]">Zesty.io</a>
           </p>
         </div>
       </div>

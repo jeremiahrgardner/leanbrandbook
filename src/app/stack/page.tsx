@@ -1,51 +1,49 @@
 'use client'
-import ScrollReveal from '@/components/ScrollReveal'
-import LeanBrandFramework from '@/components/LeanBrandFramework'
-import MVBCanvas from '@/components/MVBCanvas'
+import RetailerBar from '@/components/RetailerBar'
 
 const TOOLS = [
   {
     id: 'personagrid',
     label: '01',
     title: 'Persona Grid',
-    desc: 'Understand your audience through observation and interpretation. The grid centers on what you can see (Looks, Life) and what you can intuit (Likes, Love).',
+    desc: 'The Persona Grid is about your audience. It gives you a simple, quick way to start to summarize the information you are learning about the audience you\'re addressing. The grid was designed to help you understand the needs of your audience and narrow your focus using two techniques: observation and interpretation.',
     details: [
-      'Observes observable characteristics and life context',
-      'Interprets motivational drivers through empathy',
-      'Validates persona hypotheses with real people',
+      'On the left side of the grid, focus on what you can observe about your audience. Analyze their life and work to uncover the characteristics of your persona. Use the "Looks" and "Life" boxes on the left side of the grid.',
+      'On the right side of the grid, focus on what you can interpret from your audience. Use intuition and empathy to try and understand what drives your audience. Use both the "Likes" and the "Love" boxes on the right side of the grid to gather intuitive data about the character of your audience.',
+      'The combination of your persona\'s looks, life, likes, and loves will help to center decisions surrounding your MVB by adding a layer of real-world audience consideration to the conversation. For the persona grid to be most valuable, you must go out and find real people to validate that a persona actually exists.',
     ],
   },
   {
     id: 'mvbcanvas',
     label: '02',
     title: 'Minimum Viable Brand Canvas',
-    desc: 'Build successive iterations of your brand that enable full turns of the Build-Measure-Learn loop with minimum effort.',
+    desc: 'The Minimum Viable Brand Canvas is a tool you can use to dive into your MVB work. It will help you build successive iterations of your brand that enable full turns of the Build-Measure-Learn loop with a minimum amount of effort and the least amount of development time.',
     details: [
-      'Story: your founding narrative and rallying point',
-      'Artifacts: the sensory trail your brand leaves behind',
-      'Invitation: a single, compelling call to join the journey',
+      'Story is your story. Who you are as founders. Who you are as a startup. Why people should care about a relationship with you. This is your unique rallying point defining what you\'re fighting against and what you\'re fighting for.',
+      'Artifacts are projections of your story. The goal is to find artifacts that project your story and engage people with who you are. Great artifacts evoke emotion and reflect the relationship you are forming with your audience.',
+      'Invitations are active calls for people to join you on a journey toward shared value. By sketching out what you say, where you say it, and how you say it, invitations impact the way people respond to you.',
     ],
   },
   {
-    id: 'experimentmap',
+    id: 'leanexperimentmap',
     label: '03',
     title: 'Lean Experiment Map',
-    desc: 'Map experiments to hypotheses to learnings. Structured tracking for validated learning across every test.',
+    desc: 'The Lean Experiment Map is a structured approach to validated learning. It connects your brand hypotheses to specific experiments and measurable outcomes.',
     details: [
-      'Hypothesis: your specific, testable belief',
-      'Experiment: what you will test and how',
-      'Measure + Learn: what you observed and what it means',
+      'Hypothesis: your specific, testable belief about the emotional-value relationship you aim to build with your audience.',
+      'Experiment: what you will test, how you will run it, and what data you will collect to validate or invalidate your hypothesis.',
+      'Measure + Learn: what you observed and what it means for your next iteration of the MVB.',
     ],
   },
   {
-    id: 'valuestream',
+    id: 'valuestreammatrix',
     label: '04',
     title: 'Value Stream Matrix',
-    desc: 'Map the flow of emotional-value creation and delivery across three stages of audience relationship.',
+    desc: 'The Value Stream Matrix maps the flow of emotional-value creation and delivery across the stages of audience relationship development.',
     details: [
-      'Interaction: first touchpoints and awareness',
-      'Engagement: deepening through participation',
-      'Participation: co-creation and advocacy',
+      'Interaction: first touchpoints and how awareness becomes interest.',
+      'Engagement: deepening through participation and what keeps people involved.',
+      'Participation: co-creation and advocacy, where the audience becomes part of the brand story.',
     ],
   },
 ]
@@ -53,86 +51,48 @@ const TOOLS = [
 export default function StackPage() {
   return (
     <div>
-      {/* Hero */}
-      <section className="min-h-[60vh] flex flex-col justify-center px-6 md:px-12 py-20 border-b border-[#D8D3CC]">
-        <div className="max-w-4xl mx-auto w-full">
-          <p className="font-sans text-[9px] tracking-[0.5em] uppercase text-[#B89B5E] mb-6">The Toolkit</p>
-          <h1 className="font-serif text-4xl md:text-6xl font-light leading-[1.1] text-[#111111] mb-8">
-            The Lean Brand Stack
-          </h1>
-          <p className="font-serif text-xl font-light text-[#8a8580] max-w-2xl leading-relaxed">
-            Four tools for iterating fast, learning deeply, and building passionate relationships with your audience.
+      <RetailerBar />
+
+      <section className="px-6 md:px-12 pt-16 pb-12 border-b border-[#D8D3CC]">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#111111] mb-6">The Lean Brand Stack</h1>
+          <p className="font-serif text-base text-[#666] leading-relaxed max-w-2xl mb-4">
+            The Lean Brand Stack is a set of tools to help you iterate quickly, learn as much as you can, and build passionate relationships with your audience. The stack includes four tools: the <strong>Persona Grid</strong>, the <strong>Minimum Viable Brand Canvas</strong>, the <strong>Lean Experiment Map</strong>, and the <strong>Value Stream Matrix</strong>.
+          </p>
+          <p className="font-serif text-base text-[#666] leading-relaxed max-w-2xl mb-4">
+            The four tools are intentionally organized into a stack to guide you as you rapidly sketch out brand ideas, put together new experiments, and measure their results.
+          </p>
+          <p className="font-serif text-base text-[#666] leading-relaxed max-w-2xl">
+            The tools work best when printed out large scale or projected onto a screen so you have plenty of room to explore. Use the Lean Brand Stack to work alone, with your team, with your board, or with anyone else who can be an asset to your efforts.
           </p>
         </div>
       </section>
 
-      {/* Framework */}
-      <section className="py-20 px-6 md:px-12 border-b border-[#D8D3CC]">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal>
-            <p className="font-sans text-[9px] tracking-[0.5em] uppercase text-[#8a8580] mb-8">The Framework</p>
-            <LeanBrandFramework />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* MVB Canvas */}
-      <section className="py-20 px-6 md:px-12 border-b border-[#D8D3CC]">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal>
-            <p className="font-sans text-[9px] tracking-[0.5em] uppercase text-[#8a8580] mb-4">Core Tool</p>
-            <h2 className="font-serif text-3xl font-light text-[#111111] mb-8">The MVB Canvas</h2>
-            <p className="font-serif text-lg font-light text-[#8a8580] leading-relaxed mb-10">
-              The centerpiece of the Lean Brand Stack. Sketch out your ideas, test them with real audience, measure emotional response, and iterate.
-            </p>
-            <MVBCanvas />
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* Tools */}
-      <section className="py-20 px-6 md:px-12">
-        <div className="max-w-4xl mx-auto">
-          <p className="font-sans text-[9px] tracking-[0.5em] uppercase text-[#8a8580] mb-12">All Four Tools</p>
-          <div className="space-y-16">
-            {TOOLS.map(({ id, label, title, desc, details }, i) => (
-              <ScrollReveal key={id} delay={i * 80}>
-                <div id={id} className="scroll-mt-24 border-t border-[#D8D3CC] pt-12">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div>
-                      <p className="font-serif text-5xl font-light text-[#D8D3CC] mb-4">{label}</p>
-                      <h3 className="font-serif text-2xl font-light text-[#111111] mb-4">{title}</h3>
-                      <p className="font-serif text-base font-light text-[#8a8580] leading-relaxed">{desc}</p>
-                    </div>
-                    <div className="md:col-span-2">
-                      <ul className="space-y-3">
-                        {details.map(d => (
-                          <li key={d} className="flex items-start gap-3">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#B89B5E] mt-2 flex-shrink-0" />
-                            <p className="font-serif text-base text-[#8a8580]">{d}</p>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+      <section className="px-6 md:px-12 py-12 border-b border-[#D8D3CC]">
+        <div className="max-w-5xl mx-auto space-y-16">
+          {TOOLS.map(({ id, label, title, desc, details }) => (
+            <div key={id} id={id} className="scroll-mt-8 border-t border-[#D8D3CC] pt-8">
+              <p className="font-serif text-4xl font-bold text-[#D8D3CC] mb-2">{label}</p>
+              <h2 className="font-serif text-2xl font-bold text-[#111111] mb-4">{title}</h2>
+              <p className="font-serif text-base text-[#666] leading-relaxed max-w-2xl mb-6">{desc}</p>
+              <div className="space-y-4 max-w-2xl">
+                {details.map((d, i) => (
+                  <p key={i} className="font-serif text-base text-[#666] leading-relaxed pl-4 border-l-2 border-[#D8D3CC]">{d}</p>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-6 md:px-12 border-t border-[#D8D3CC]">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div>
-            <p className="font-serif text-2xl font-light text-[#111111] mb-2">Get the book to use the stack</p>
-            <p className="font-serif text-base text-[#8a8580]">Includes the full toolkit as downloadable PDFs</p>
-          </div>
-          <a
-            href="/order"
-            className="inline-block bg-[#111111] text-[#F2EFE8] font-sans text-[9px] tracking-[0.3em] uppercase px-8 py-4 hover:bg-[#B89B5E] transition-colors duration-500 flex-shrink-0"
-          >
+      <section className="px-6 md:px-12 py-12 border-b border-[#D8D3CC]">
+        <div className="max-w-5xl mx-auto">
+          <p className="font-serif text-base text-[#666] leading-relaxed mb-6">
+            Get the complete Lean Brand Stack with the book &mdash; including printable PDFs of all four tools.
+          </p>
+          <a href="/order" className="inline-block bg-[#111111] text-[#F2EFE8] font-sans text-[9px] tracking-[0.3em] uppercase px-6 py-3 hover:bg-[#B89B5E] transition-colors duration-300">
             Order The Lean Brand
           </a>
         </div>
