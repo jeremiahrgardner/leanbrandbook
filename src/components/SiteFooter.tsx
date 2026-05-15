@@ -1,41 +1,36 @@
+import Link from 'next/link'
+
 export default function SiteFooter() {
   return (
-    <footer className="py-12 px-6 md:px-12 border-t border-[#D8D3CC]">
-      <div className="max-w-4xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+    <footer style={{ textAlign: 'center', backgroundColor: '#eee', paddingTop: 10, paddingBottom: 30, marginTop: 0 }}>
+      <div style={{ maxWidth: 970, margin: '0 auto', padding: '0 20px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: 20, marginBottom: 20 }}>
           <div>
-            <p className="font-serif text-xs tracking-[0.3em] uppercase text-[#111111] mb-3">The Lean Brand™</p>
-            <p className="font-sans text-[10px] text-[#8a8580] leading-relaxed">
-              The first book to apply lean principles to brand development.
-            </p>
-          </div>
-          <div>
-            <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-[#8a8580] mb-3">Pages</p>
-            <div className="space-y-2">
-              <a href="/order" className="block font-sans text-[10px] text-[#8a8580] hover:text-[#111111] transition-colors">Order</a>
-              <a href="/about" className="block font-sans text-[10px] text-[#8a8580] hover:text-[#111111] transition-colors">What You'll Learn</a>
-              <a href="/blog" className="block font-sans text-[10px] text-[#8a8580] hover:text-[#111111] transition-colors">Blog</a>
-              <a href="/stack" className="block font-sans text-[10px] text-[#8a8580] hover:text-[#111111] transition-colors">Stack</a>
-              <a href="/artwork" className="block font-sans text-[10px] text-[#8a8580] hover:text-[#111111] transition-colors">Artwork</a>
+            <p style={{ fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#888', marginBottom: 10, fontFamily: 'Montserrat, Arial, sans-serif' }}>Pages</p>
+            <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+              <Link href="/order" style={{ color: '#efa24d', fontSize: 12, textDecoration: 'none', fontFamily: 'Montserrat, Arial, sans-serif' }}>Order</Link>
+              <Link href="/about" style={{ color: '#efa24d', fontSize: 12, textDecoration: 'none', fontFamily: 'Montserrat, Arial, sans-serif' }}>What You&apos;ll Learn</Link>
+              <Link href="/blog" style={{ color: '#efa24d', fontSize: 12, textDecoration: 'none', fontFamily: 'Montserrat, Arial, sans-serif' }}>Blog</Link>
+              <Link href="/stack" style={{ color: '#efa24d', fontSize: 12, textDecoration: 'none', fontFamily: 'Montserrat, Arial, sans-serif' }}>Stack</Link>
+              <Link href="/artwork" style={{ color: '#efa24d', fontSize: 12, textDecoration: 'none', fontFamily: 'Montserrat, Arial, sans-serif' }}>Artwork</Link>
             </div>
           </div>
           <div>
-            <p className="font-sans text-[9px] tracking-[0.3em] uppercase text-[#8a8580] mb-3">Author</p>
-            <div className="space-y-2">
-              <a href="https://jeremiahgardner.com" target="_blank" rel="noopener noreferrer" className="block font-sans text-[10px] text-[#8a8580] hover:text-[#111111] transition-colors">JeremiahGardner.com</a>
-              <a href="https://twitter.com/JeremiahGardner" target="_blank" rel="noopener noreferrer" className="block font-sans text-[10px] text-[#8a8580] hover:text-[#111111] transition-colors">@JeremiahGardner</a>
-              <a href="mailto:hello@theleanbrand.me" className="block font-sans text-[10px] text-[#8a8580] hover:text-[#111111] transition-colors">hello@theleanbrand.me</a>
+            <p style={{ fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#888', marginBottom: 10, fontFamily: 'Montserrat, Arial, sans-serif' }}>Author</p>
+            <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+              <a href="https://jeremiahgardner.com" target="_blank" rel="noopener" style={{ color: '#efa24d', fontSize: 12, textDecoration: 'none', fontFamily: 'Montserrat, Arial, sans-serif' }}>JeremiahGardner.com</a>
+              <a href="https://twitter.com/JeremiahGardner" target="_blank" rel="noopener" style={{ color: '#efa24d', fontSize: 12, textDecoration: 'none', fontFamily: 'Montserrat, Arial, sans-serif' }}>@JeremiahGardner</a>
+              <a href="mailto:hello@theleanbrand.me" style={{ color: '#efa24d', fontSize: 12, textDecoration: 'none', fontFamily: 'Montserrat, Arial, sans-serif' }}>hello@theleanbrand.me</a>
             </div>
           </div>
         </div>
-        <div className="pt-8 border-t border-[#D8D3CC]">
-          <p className="font-sans text-[9px] text-[#8a8580]">
-            &copy; 2013-2025 Jeremiah Gardner | All rights reserved. The Lean Brand&trade; is a registered Trademark of Jeremiah Gardner. The Lean Brand&trade; cover artwork subject to change.
-          </p>
-          <p className="font-sans text-[9px] text-[#8a8580] mt-2">
-            Site by <a href="https://www.zesty.io" target="_blank" rel="noopener noreferrer" className="hover:text-[#B89B5E]">Zesty.io</a>
-          </p>
-        </div>
+        <hr style={{ border: 'none', borderBottom: '1px solid #ccc', margin: '20px 0' }} />
+        <p style={{ fontSize: 10, color: '#666', fontFamily: 'Montserrat, Arial, sans-serif' }}>
+          &copy; 2013-2025 Jeremiah Gardner | All rights reserved. <em>The Lean Brand</em> is a registered Trademark of Jeremiah Gardner. <em>The Lean Brand</em> cover artwork subject to change.
+        </p>
+        <p style={{ fontSize: 10, color: '#666', fontFamily: 'Montserrat, Arial, sans-serif' }}>
+          Site by <a href="https://www.zesty.io/" target="_blank" rel="noopener" style={{ color: '#efa24d', fontSize: 10 }}>Zesty.io</a>
+        </p>
       </div>
     </footer>
   )

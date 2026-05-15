@@ -141,15 +141,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* FOOTER */}
-      <footer style={{ textAlign: 'center', backgroundColor: '#eee', paddingTop: 10, paddingBottom: 30, marginTop: 100 }}>
-        <p style={{ fontSize: 10, paddingTop: 20, color: '#666', fontFamily: 'Montserrat, Arial, sans-serif' }}>
-          &copy; 2013-2025 Jeremiah Gardner | All rights reserved. <em>The Lean Brand</em> is a registered Trademark of Jeremiah Gardner. <em>The Lean Brand</em> cover artwork subject to change.
-        </p>
-        <p style={{ fontSize: 10, color: '#666', fontFamily: 'Montserrat, Arial, sans-serif' }}>
-          Site by <a href="https://www.zesty.io/" target="_blank" rel="noopener" style={{ color: '#efa24d', fontSize: 10 }}>Zesty.io</a>
-        </p>
-      </footer>
     </div>
   )
 }
