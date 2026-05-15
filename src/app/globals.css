@@ -3,16 +3,64 @@
 @tailwind utilities;
 
 :root {
-  --ink: #111111;
-  --paper: #F2EFE8;
+  --ink: #343434;
+  --page-bg: #f7f7f7;
+  --accent: #efa24d;
+  --accent-dark: #eb8a1e;
+  --nav-bg: #f93;
   --soft-gray: #D8D3CC;
-  --foil-gold: #B89B5E;
 }
 
 body {
-  background-color: var(--paper);
+  background-color: var(--page-bg);
   color: var(--ink);
+  font-family: 'Montserrat', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: inherit; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+h1 { font-size: 38px; color: #efa24d; font-weight: normal; margin-bottom: 6px; }
+h2 { font-size: 34px; color: #343434; font-weight: normal; margin-bottom: 6px; }
+h3 { font-size: 28px; color: #343434; font-weight: normal; margin-bottom: 6px; }
+h4 { font-size: 22px; color: #343434; font-weight: normal; margin-bottom: 6px; }
+
+p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6em;
+  margin-bottom: 1.6em;
+  color: #343434;
+}
+
+a {
+  color: #efa24d;
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 100ms ease;
+}
+a:visited { color: #efa24d; }
+a:hover { color: #faa846; text-decoration: none; }
+
+blockquote {
+  color: #333;
+  padding: 1px;
+  font-size: 18px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.4em;
+  margin: 40px;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px #ee9d44 solid;
+  border-top: 1px #f2b672 solid;
+  margin: 40px 0;
+  height: 0;
+}

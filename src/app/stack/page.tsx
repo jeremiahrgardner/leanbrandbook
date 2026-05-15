@@ -1,102 +1,108 @@
-'use client'
-import RetailerBar from '@/components/RetailerBar'
-
-const TOOLS = [
-  {
-    id: 'personagrid',
-    label: '01',
-    title: 'Persona Grid',
-    desc: 'The Persona Grid is about your audience. It gives you a simple, quick way to start to summarize the information you are learning about the audience you\'re addressing. The grid was designed to help you understand the needs of your audience and narrow your focus using two techniques: observation and interpretation.',
-    details: [
-      'On the left side of the grid, focus on what you can observe about your audience. Analyze their life and work to uncover the characteristics of your persona. Use the "Looks" and "Life" boxes on the left side of the grid.',
-      'On the right side of the grid, focus on what you can interpret from your audience. Use intuition and empathy to try and understand what drives your audience. Use both the "Likes" and the "Love" boxes on the right side of the grid to gather intuitive data about the character of your audience.',
-      'The combination of your persona\'s looks, life, likes, and loves will help to center decisions surrounding your MVB by adding a layer of real-world audience consideration to the conversation. For the persona grid to be most valuable, you must go out and find real people to validate that a persona actually exists.',
-    ],
-  },
-  {
-    id: 'mvbcanvas',
-    label: '02',
-    title: 'Minimum Viable Brand Canvas',
-    desc: 'The Minimum Viable Brand Canvas is a tool you can use to dive into your MVB work. It will help you build successive iterations of your brand that enable full turns of the Build-Measure-Learn loop with a minimum amount of effort and the least amount of development time.',
-    details: [
-      'Story is your story. Who you are as founders. Who you are as a startup. Why people should care about a relationship with you. This is your unique rallying point defining what you\'re fighting against and what you\'re fighting for.',
-      'Artifacts are projections of your story. The goal is to find artifacts that project your story and engage people with who you are. Great artifacts evoke emotion and reflect the relationship you are forming with your audience.',
-      'Invitations are active calls for people to join you on a journey toward shared value. By sketching out what you say, where you say it, and how you say it, invitations impact the way people respond to you.',
-    ],
-  },
-  {
-    id: 'leanexperimentmap',
-    label: '03',
-    title: 'Lean Experiment Map',
-    desc: 'The Lean Experiment Map is a structured approach to validated learning. It connects your brand hypotheses to specific experiments and measurable outcomes.',
-    details: [
-      'Hypothesis: your specific, testable belief about the emotional-value relationship you aim to build with your audience.',
-      'Experiment: what you will test, how you will run it, and what data you will collect to validate or invalidate your hypothesis.',
-      'Measure + Learn: what you observed and what it means for your next iteration of the MVB.',
-    ],
-  },
-  {
-    id: 'valuestreammatrix',
-    label: '04',
-    title: 'Value Stream Matrix',
-    desc: 'The Value Stream Matrix maps the flow of emotional-value creation and delivery across the stages of audience relationship development.',
-    details: [
-      'Interaction: first touchpoints and how awareness becomes interest.',
-      'Engagement: deepening through participation and what keeps people involved.',
-      'Participation: co-creation and advocacy, where the audience becomes part of the brand story.',
-    ],
-  },
-]
-
 export default function StackPage() {
   return (
-    <div>
-      <RetailerBar />
+    <div style={{ paddingTop: 46, backgroundColor: '#f7f7f7', minHeight: '100vh', fontFamily: 'Montserrat, Arial, sans-serif' }}>
 
-      <section className="px-6 md:px-12 pt-16 pb-12 border-b border-[#D8D3CC]">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#111111] mb-6">The Lean Brand Stack</h1>
-          <p className="font-serif text-base text-[#666] leading-relaxed max-w-2xl mb-4">
-            The Lean Brand Stack is a set of tools to help you iterate quickly, learn as much as you can, and build passionate relationships with your audience. The stack includes four tools: the <strong>Persona Grid</strong>, the <strong>Minimum Viable Brand Canvas</strong>, the <strong>Lean Experiment Map</strong>, and the <strong>Value Stream Matrix</strong>.
-          </p>
-          <p className="font-serif text-base text-[#666] leading-relaxed max-w-2xl mb-4">
-            The four tools are intentionally organized into a stack to guide you as you rapidly sketch out brand ideas, put together new experiments, and measure their results.
-          </p>
-          <p className="font-serif text-base text-[#666] leading-relaxed max-w-2xl">
-            The tools work best when printed out large scale or projected onto a screen so you have plenty of room to explore. Use the Lean Brand Stack to work alone, with your team, with your board, or with anyone else who can be an asset to your efforts.
+      {/* RETAILER BAR */}
+      <div style={{ backgroundColor: '#111', padding: '12px 0', fontSize: 11 }}>
+        <div style={{ maxWidth: 970, margin: '0 auto', padding: '0 20px', display: 'flex', flexWrap: 'wrap', gap: '8px 20px', alignItems: 'center' }}>
+          <span style={{ color: '#B89B5E', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: 9 }}>Hardcopy Available On:</span>
+          <a href="https://www.barnesandnoble.com/w/entrepreneurs-guide-to-the-lean-brand-jeremiah-gardner/1120544524?ean=9780996100748" target="_blank" rel="noopener" style={{ color: '#D8D3CC', fontSize: 10 }}>Barnes &amp; Noble</a>
+          <a href="https://www.amazon.com/Entrepreneurs-Guide-Lean-Brand-Gardner/dp/0996100746" target="_blank" rel="noopener" style={{ color: '#D8D3CC', fontSize: 10 }}>Amazon</a>
+          <span style={{ color: '#B89B5E', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: 9, marginLeft: 10 }}>eBook Available On:</span>
+          <a href="https://play.google.com/store/books/details/Jeremiah_Gardner_Entrepreneur_s_Guide_To_The_Lean?id=B6JECQAAQBAJ" target="_blank" rel="noopener" style={{ color: '#D8D3CC', fontSize: 10 }}>Google Play</a>
+          <a href="https://itunes.apple.com/us/book/entrepreneurs-guide-to-lean/id995087864" target="_blank" rel="noopener" style={{ color: '#D8D3CC', fontSize: 10 }}>Apple Books</a>
+          <a href="https://www.barnesandnoble.com/w/entrepreneurs-guide-to-the-lean-brand-gardner-jeremiah/1121934784?ean=9780996100700" target="_blank" rel="noopener" style={{ color: '#D8D3CC', fontSize: 10 }}>Barnes &amp; Noble</a>
+        </div>
+      </div>
+
+      {/* PAGE HEADER */}
+      <div style={{ backgroundColor: '#f93', boxShadow: 'inset 0 0 30px #ff8000', paddingBottom: 40 }}>
+        <div style={{ maxWidth: 970, margin: '0 auto', padding: '0 20px' }}>
+          <h1 style={{ color: '#fff', marginTop: 60, marginBottom: 6, fontSize: 38, fontWeight: 'normal', lineHeight: 1.2 }}>The Lean Brand Stack</h1>
+          <p style={{ color: '#fff', fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', fontSize: 18, lineHeight: 1.6, marginTop: 10, marginBottom: 20, maxWidth: 600 }}>
+            Four essential tools for building meaningful relationships with your audience through experimentation, iteration, and value-based connection.
           </p>
         </div>
-      </section>
+      </div>
 
-      {/* Tools */}
-      <section className="px-6 md:px-12 py-12 border-b border-[#D8D3CC]">
-        <div className="max-w-5xl mx-auto space-y-16">
-          {TOOLS.map(({ id, label, title, desc, details }) => (
-            <div key={id} id={id} className="scroll-mt-8 border-t border-[#D8D3CC] pt-8">
-              <p className="font-serif text-4xl font-bold text-[#D8D3CC] mb-2">{label}</p>
-              <h2 className="font-serif text-2xl font-bold text-[#111111] mb-4">{title}</h2>
-              <p className="font-serif text-base text-[#666] leading-relaxed max-w-2xl mb-6">{desc}</p>
-              <div className="space-y-4 max-w-2xl">
-                {details.map((d, i) => (
-                  <p key={i} className="font-serif text-base text-[#666] leading-relaxed pl-4 border-l-2 border-[#D8D3CC]">{d}</p>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* TOOLS SECTION */}
+      <div style={{ maxWidth: 970, margin: '0 auto', padding: '40px 20px' }}>
 
-      {/* CTA */}
-      <section className="px-6 md:px-12 py-12 border-b border-[#D8D3CC]">
-        <div className="max-w-5xl mx-auto">
-          <p className="font-serif text-base text-[#666] leading-relaxed mb-6">
-            Get the complete Lean Brand Stack with the book &mdash; including printable PDFs of all four tools.
+        {/* PERSONA GRID */}
+        <div style={{ backgroundColor: '#fff', marginBottom: 40, padding: '30px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+          <h2 style={{ color: '#343434', fontSize: 28, fontWeight: 'normal', marginTop: 0, marginBottom: 10, borderBottom: '3px solid #efa24d', paddingBottom: 10, display: 'inline-block' }}>Persona Grid</h2>
+          <p style={{ color: '#555', fontSize: 16, lineHeight: 1.7, fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', marginBottom: 20 }}>
+            The Persona Grid helps you move beyond assumptions and truly understand your audience. Rather than creating fictional characters, this tool guides you through identifying real people, their jobs-to-be-done, and the value they seek. Use it to shift from demographic guessing to empirical audience insight.
           </p>
-          <a href="/order" className="inline-block bg-[#111111] text-[#F2EFE8] font-sans text-[9px] tracking-[0.3em] uppercase px-6 py-3 hover:bg-[#B89B5E] transition-colors duration-300">
-            Order The Lean Brand
-          </a>
+          <h3 style={{ color: '#efa24d', fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 15, fontFamily: 'Montserrat, Arial, sans-serif' }}>Key Elements</h3>
+          <ul style={{ color: '#343434', fontSize: 15, lineHeight: 1.8, fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', paddingLeft: 20 }}>
+            <li>Identify the audience you want to build a relationship with</li>
+            <li>Define jobs-to-be-done rather than demographic traits</li>
+            <li>Map value expectations and emotional drivers</li>
+            <li>Test assumptions through direct audience interaction</li>
+            <li>Iterate based on real feedback, not internal consensus</li>
+          </ul>
         </div>
-      </section>
+
+        {/* VALUE PROPOSITION CANVAS */}
+        <div style={{ backgroundColor: '#fff', marginBottom: 40, padding: '30px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+          <h2 style={{ color: '#343434', fontSize: 28, fontWeight: 'normal', marginTop: 0, marginBottom: 10, borderBottom: '3px solid #efa24d', paddingBottom: 10, display: 'inline-block' }}>Value Proposition Canvas</h2>
+          <p style={{ color: '#555', fontSize: 16, lineHeight: 1.7, fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', marginBottom: 20 }}>
+            The Value Proposition Canvas ensures your brand creates genuine value for your audience. It forces clarity around what problems you solve, what gains you create, and how you alleviate pain. Use it to align your offerings with actual audience needs.
+          </p>
+          <h3 style={{ color: '#efa24d', fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 15, fontFamily: 'Montserrat, Arial, sans-serif' }}>Key Elements</h3>
+          <ul style={{ color: '#343434', fontSize: 15, lineHeight: 1.8, fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', paddingLeft: 20 }}>
+            <li>Define the audience profile and their core objectives</li>
+            <li>Identify pains and the emotional burden they create</li>
+            <li>Articulate gains and the value they seek</li>
+            <li>Map products and services that address pains and create gains</li>
+            <li>Create fit between your value proposition and audience needs</li>
+          </ul>
+        </div>
+
+        {/* BRAND LANGUAGE ECOSYSTEM */}
+        <div style={{ backgroundColor: '#fff', marginBottom: 40, padding: '30px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+          <h2 style={{ color: '#343434', fontSize: 28, fontWeight: 'normal', marginTop: 0, marginBottom: 10, borderBottom: '3px solid #efa24d', paddingBottom: 10, display: 'inline-block' }}>Brand Language Ecosystem</h2>
+          <p style={{ color: '#555', fontSize: 16, lineHeight: 1.7, fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', marginBottom: 20 }}>
+            The Brand Language Ecosystem provides a framework for expressing your brand consistently across every touchpoint. It goes beyond logos and colors to encompass voice, tone, messaging architecture, and the emotional qualities that differentiate you. Use it to build recognizable, meaningful relationships.
+          </p>
+          <h3 style={{ color: '#efa24d', fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 15, fontFamily: 'Montserrat, Arial, sans-serif' }}>Key Elements</h3>
+          <ul style={{ color: '#343434', fontSize: 15, lineHeight: 1.8, fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', paddingLeft: 20 }}>
+            <li>Establish brand voice and tonal qualities</li>
+            <li>Define messaging hierarchy from taglines to detailed copy</li>
+            <li>Create visual language consistency across channels</li>
+            <li>Build emotional association frameworks</li>
+            <li>Enable team members to express the brand authentically</li>
+          </ul>
+        </div>
+
+        {/* MINIMUM VIABLE BRAND CANVAS */}
+        <div style={{ backgroundColor: '#fff', marginBottom: 40, padding: '30px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+          <h2 style={{ color: '#343434', fontSize: 28, fontWeight: 'normal', marginTop: 0, marginBottom: 10, borderBottom: '3px solid #efa24d', paddingBottom: 10, display: 'inline-block' }}>Minimum Viable Brand Canvas</h2>
+          <p style={{ color: '#555', fontSize: 16, lineHeight: 1.7, fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', marginBottom: 20 }}>
+            The Minimum Viable Brand Canvas synthesizes the other three tools into a single actionable framework. It helps you launch a brand with just enough definition to test your assumptions without over-investing. Use it to move fast, learn quickly, and build value-based relationships from day one.
+          </p>
+          <h3 style={{ color: '#efa24d', fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 15, fontFamily: 'Montserrat, Arial, sans-serif' }}>Key Elements</h3>
+          <ul style={{ color: '#343434', fontSize: 15, lineHeight: 1.8, fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', paddingLeft: 20 }}>
+            <li>Define your minimum viable brand in one page</li>
+            <li>Integrate persona, value proposition, and language elements</li>
+            <li>Identify riskiest assumptions to test first</li>
+            <li>Create a feedback loop for continuous iteration</li>
+            <li>Scale brand investments based on validated learning</li>
+          </ul>
+        </div>
+
+      </div>
+
+      {/* FOOTER */}
+      <footer style={{ textAlign: 'center', backgroundColor: '#eee', paddingTop: 10, paddingBottom: 30, marginTop: 100 }}>
+        <p style={{ fontSize: 10, paddingTop: 20, color: '#666', fontFamily: 'Montserrat, Arial, sans-serif' }}>
+          &copy; 2013-2025 Jeremiah Gardner | All rights reserved. <em>The Lean Brand</em> is a registered Trademark of Jeremiah Gardner. <em>The Lean Brand</em> cover artwork subject to change.
+        </p>
+        <p style={{ fontSize: 10, color: '#666', fontFamily: 'Montserrat, Arial, sans-serif' }}>
+          Site by <a href="https://www.zesty.io/" target="_blank" rel="noopener" style={{ color: '#efa24d', fontSize: 10 }}>Zesty.io</a>
+        </p>
+      </footer>
     </div>
   )
 }
