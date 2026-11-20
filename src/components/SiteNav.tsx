@@ -1,105 +1,69 @@
 'use client'
-import Link from 'next/link'
-import { useState } from 'react'
 
-const NAV_LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: "What You'll Learn" },
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useRef, useState } from 'react'
+
+const navLinks = [
+  { href: '/', label: 'The Book' },
+  { href: '/about', label: 'What You’ll Learn' },
   { href: '/blog', label: 'Blog' },
-  { href: '/stack', label: 'Stack' },
+  { href: '/stack', label: 'Tools' },
   { href: '/artwork', label: 'Artwork' },
-  { href: '/order', label: 'Order' },
 ]
 
 export default function SiteNav() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const [openMenuPath, setOpenMenuPath] = useState<string | null>(null)
+  const menuButton = useRef<HTMLButtonElement>(null)
+  const menuOpen = openMenuPath === pathname
 
   return (
-    <nav style={{
-      position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 50,
-      backgroundColor: '#f93', boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
-      fontFamily: 'Montserrat, Arial, sans-serif',
-    }}>
-      <div style={{ maxWidth: 970, margin: '0 auto', padding: '0 20px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 46 }}>
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-            <span style={{ color: '#fff', textTransform: 'uppercase', letterSpacing: '1px', fontSize: 13, fontWeight: 700 }}>
-              The Lean Brand
-            </span>
-          </Link>
-
-          {/* Desktop nav */}
-          <ul style={{
-            display: 'flex', alignItems: 'center', listStyle: 'none', margin: 0, padding: 0,
-          }} className="desktop-nav">
-            {NAV_LINKS.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  style={{
-                    color: '#fff', textTransform: 'uppercase', letterSpacing: '1px',
-                    fontSize: 12, padding: '0 10px', height: 46, display: 'flex',
-                    alignItems: 'center', textDecoration: 'none',
-                  }}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            style={{
-              background: 'none', border: 'none', color: '#fff', fontSize: 22,
-              cursor: 'pointer', width: 40, height: 40, display: 'flex',
-              alignItems: 'center', justifyContent: 'center',
-              padding: 0, appearance: 'none',
-            }}
-            className="mobile-menu-btn"
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? '✕' : '☰'}
-          </button>
-        </div>
-
-        {/* Mobile dropdown */}
-        <div style={{
-          maxHeight: menuOpen ? 400 : 0,
-          overflow: 'hidden',
-          transition: 'max-height 300ms ease',
-          borderTop: menuOpen ? '1px solid #eb8a1e' : 'none',
-        }} className="mobile-dropdown">
-          {NAV_LINKS.map(({ href, label }) => (
+    <header
+      className="site-header"
+      onKeyDown={(event) => {
+        if (event.key === 'Escape' && menuOpen) {
+          setOpenMenuPath(null)
+          menuButton.current?.focus()
+        }
+      }}
+    >
+      <div className="book-shell site-header-inner">
+        <Link href="/" className="site-wordmark" onClick={() => setOpenMenuPath(null)}>
+          <span className="site-mark" aria-hidden="true"><i /><i /><i /></span>
+          The Lean Brand
+        </Link>
+        <button
+          ref={menuButton}
+          className="site-menu-toggle"
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="site-navigation"
+          onClick={() => setOpenMenuPath(menuOpen ? null : pathname)}
+        >
+          {menuOpen ? 'Close' : 'Menu'} <span aria-hidden="true">{menuOpen ? '×' : '☰'}</span>
+        </button>
+        <nav id="site-navigation" aria-label="Main navigation" data-open={menuOpen}>
+          {navLinks.map(({ href, label }) => (
             <Link
-              key={href}
               href={href}
-              onClick={() => setMenuOpen(false)}
-              style={{
-                color: '#fff', textTransform: 'uppercase', letterSpacing: '1px',
-                fontSize: 12, display: 'block', padding: '12px 10px',
-                borderBottom: '1px solid #eb8a1e', textDecoration: 'none',
-              }}
+              key={href}
+              aria-current={pathname === href ? 'page' : undefined}
+              onClick={() => setOpenMenuPath(null)}
             >
               {label}
             </Link>
           ))}
-        </div>
+          <Link
+            href="/order"
+            className="book-button book-button-nav"
+            aria-current={pathname === '/order' ? 'page' : undefined}
+            onClick={() => setOpenMenuPath(null)}
+          >
+            Get the book <span aria-hidden="true">→</span>
+          </Link>
+        </nav>
       </div>
-
-      <style>{`
-        @media (max-width: 767px) {
-          .desktop-nav { display: none !important; }
-          .mobile-menu-btn { display: flex !important; }
-          .mobile-dropdown { display: block !important; }
-        }
-        @media (min-width: 768px) {
-          .desktop-nav { display: flex !important; }
-          .mobile-menu-btn { display: none !important; }
-          .mobile-dropdown { display: none !important; }
-        }
-      `}</style>
-    </nav>
+    </header>
   )
 }
